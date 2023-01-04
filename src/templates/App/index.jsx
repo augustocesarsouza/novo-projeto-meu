@@ -4,7 +4,7 @@ function Home() {
   return (
     <div className="App">
       <Styled.Wrapper>
-        <h1>Oi</h1>
+        <h1>Hello</h1>
       </Styled.Wrapper>
     </div>
   );

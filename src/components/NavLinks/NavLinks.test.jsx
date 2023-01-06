@@ -16,7 +16,7 @@ describe("<NavLinks />", () => {
     expect(screen.queryAllByText(/links/i)).toHaveLength(0);
   });
 
-  it("should render links", () => {
+  it("should render styles", () => {
     renderTheme(<NavLinks links={mock} />);
     expect(screen.getByText(/link 10/i).parentElement).toHaveStyleRule("flex-wrap", "column wrap", {
       media: theme.media.lteMedium,
@@ -24,7 +24,7 @@ describe("<NavLinks />", () => {
   });
 
   it("should match snapshot", () => {
-    renderTheme(<NavLinks links={mock} />);
-    expect(screen.getAllByRole("link")).toMatchSnapshot();
+    const { container } = renderTheme(<NavLinks links={mock} />);
+    expect(container.firstChild).toMatchSnapshot();
   });
 });

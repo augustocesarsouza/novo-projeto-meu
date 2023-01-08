@@ -18,7 +18,7 @@ describe("<NavLinks />", () => {
 
   it("should render styles", () => {
     renderTheme(<NavLinks links={mock} />);
-    expect(screen.getByText(/link 10/i).parentElement).toHaveStyleRule("flex-wrap", "column wrap", {
+    expect(screen.getByText(/link 10/i).parentElement).toHaveStyleRule("flex-wrap", "wrap", {
       media: theme.media.lteMedium,
     });
   });

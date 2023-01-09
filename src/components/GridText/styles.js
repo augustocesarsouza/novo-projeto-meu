@@ -16,6 +16,12 @@ export const Grid = styled.div`
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: ${theme.spacings.large};
+    overflow: visible;
+    width: 100%;
+
+    @media ${theme.media.lteMedium} {
+      grid-template-columns: 1fr;
+    }
   `}
 `;
 
@@ -31,7 +37,7 @@ export const GridElement = styled.div`
       content: counter(grid-counter);
       position: absolute;
       font-size: 7rem;
-      top: -3rem;
+      top: -4rem;
       left: -5rem;
       transform: rotate(5deg);
     }

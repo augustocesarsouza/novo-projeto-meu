@@ -17,8 +17,3 @@ export const GridContent = ({ title, html, background = false }) => {
     </SectionBackground>
   );
 };
-GridContent.propTypes = {
-  title: P.string.isRequired,
-  html: P.string.isRequired,
-  background: P.bool,
-};

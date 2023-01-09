@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import { theme } from "./theme";
+// import { theme } from "./theme";
 
 export const GlobalStyles = createGlobalStyle`
  *{
@@ -33,7 +33,7 @@ export const GlobalStyles = createGlobalStyle`
  }
 
  a {
-  color: ${({ theme }) => theme.colors.secondaryColor}
+  color: ${({ theme }) => theme.colors.secondaryColor};
   
  }
 `;

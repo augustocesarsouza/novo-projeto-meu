@@ -21,4 +21,5 @@ Base.propTypes = {
   children: P.node.isRequired,
   ...Menu.propTypes,
   footerHtml: P.string.isRequired,
+  logoData: P.object,
 };

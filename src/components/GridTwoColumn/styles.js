@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 import { Title } from "../Heading/styles";
 
 export const Container = styled.div`
-  ${({ theme, background }) => css`
+  ${({ theme }) => css`
     display: grid;
     grid-template-columns: 1fr 2fr;
     align-items: center;
@@ -22,7 +22,7 @@ export const Container = styled.div`
 export const TextContainer = styled.div`
   ${({ theme }) => css`
     @media ${theme.media.lteMedium} {
-      margin-bottom: ${theme.spacings.xlarge};
+      margin-bottom: ${theme.spacings.large};
     }
   `}
 `;

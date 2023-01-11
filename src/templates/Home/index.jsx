@@ -24,13 +24,12 @@ function Home() {
           return setTimeout(() => {
             setData(() => pageData[0]);
             r();
-          }, 100000);
+          }, 2000);
         });
       } catch (e) {
         setData(undefined);
       }
     };
-
     load();
   }, []);
 

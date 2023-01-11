@@ -46,7 +46,7 @@ export const Container = styled.div`
       height: 2rem;
       border-left: 0.5rem solid ${theme.colors.secondaryColor};
       border-top: 0.5rem solid ${theme.colors.secondaryColor};
-      animation: ${rotate()} 1s linear reverse infinite;
+      animation: ${rotate()} 1s ease-in-out reverse infinite;
     }
   `}
 `;

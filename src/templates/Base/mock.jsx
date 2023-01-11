@@ -19,7 +19,7 @@ export const mockBase = {
   links: linksMock,
   logoData: {
     text: "Logo",
-    links: "#",
+    link: "#",
   },
   footerHtml: "<p>Teste de footer</p>",
 };

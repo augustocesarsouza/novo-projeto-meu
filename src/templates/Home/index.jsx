@@ -15,6 +15,8 @@ import { Base } from "../Base";
 import { PageNotFoud } from "../PageNotFoud";
 import { Loadind } from "../Loading";
 
+import config from "../../config";
+
 function Home() {
   const [data, setData] = useState([]);
   const location = useLocation();
@@ -22,15 +24,12 @@ function Home() {
   useEffect(() => {
     const pathname = location.pathname.replace(/[^a-z0-9-_]/gi, "");
     const slug = pathname ? pathname : "olha-so-a-minha-pagina";
-    console.log(slug);
 
     const load = async () => {
       try {
-        const data = await fetch(
-          "http://localhost:1337/api/pages/?filters[slug]=olha-so-a-minha-pagina&populate[sections][populate]=*&populate[menu][populate]=*" +
-            slug,
-        );
+        const data = await fetch(config.url);
         const json = await data.json();
+        console.log(json);
         const { attributes } = json.data[0];
         const pageData = mapData([attributes]);
 
@@ -42,6 +41,20 @@ function Home() {
     load();
   }, []);
 
+  useEffect(() => {
+    if (data === undefined) {
+      document.title = `Página não encontrada | ${config.siteName}`;
+    }
+
+    if (data && !data.slug) {
+      document.title = `Carregando... | ${config.siteName}`;
+    }
+
+    if (data && !data.data) {
+      document.title = `${data.title} | ${config.siteName}`;
+    }
+  }, [data]);
+
   if (data === undefined) {
     return <PageNotFoud />;
   }
@@ -52,7 +65,7 @@ function Home() {
 
   const { menu, sections, footerHtml, slug } = data;
   const { links, text, link, srcImg } = menu;
-  console.log({ text, link, srcImg });
+  // console.log(data);
 
   return (
     <Base links={links} footerHtml={footerHtml} logoData={{ text, link, srcImg }}>

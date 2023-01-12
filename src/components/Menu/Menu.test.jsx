@@ -5,6 +5,7 @@ import { Menu } from ".";
 import linksMock from "../NavLinks/mock";
 import { theme } from "../../styles/theme";
 import { fireEvent } from "@storybook/testing-library";
+
 const logoData = {
   text: "Logo",
   link: "#target",
